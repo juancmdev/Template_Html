@@ -9,12 +9,46 @@
   <body>
     <div class="container">
       <h1>Cómo utilizar la etiqueta Template en Html</h1>
-
-      <ul id="lista">
-        <li class="list">
-          <b>Nombre: </b><span class="text-danger">descripción</span>
+      <p>
+        El elemento HTML "template" es un mecanismo para mantener el contenido
+        HTML del lado del cliente que no se renderiza cuando se carga una
+        página, pero que posteriormente puede ser instanciado durante el tiempo
+        de ejecución empleando JavaScript.
+      </p>
+      <p>Estos son los pasos para utilizar los templates:</p>
+      <ol>
+        <li>
+          Hacemos nuestro "template" dentro del html (este va a tener la
+          estructura que queremos modificar con JS).
         </li>
-      </ul>
+        <li>
+          Accedemos con querySelector o con getDocumentByID a su contenido como
+          si fuera CSS.
+        </li>
+        <li>Lo modificamos con textContent.</li>
+        <li>Lo clonamos.</li>
+        <li>Lo agregamos al fragment.</li>
+        <li>Por último lo agregamos a la lista.</li>
+      </ol>
+
+      <p>El resultado es el siguiente:</p>
+
+      <ul id="lista"></ul>
+
+      <!--Se recomienda dejar el template siempre abajo-->
+      <template id="template-li">
+        <li class="list">
+          <b>Nombre: </b> <span class="nombre"></span>
+          <br />
+          <b>Id: </b><span id="id"></span>
+          <br />
+          <b>Precio: $</b><span id="precio"></span>
+          <br />
+          <b>Imagen: </b><span id="imagen"></span>
+          <br />
+          <br />
+        </li>
+      </template>
     </div>
     <script src="./app.js"></script>
   </body>

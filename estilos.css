@@ -18,3 +18,30 @@ h1 {
   margin: 0 auto;
   width: 80%;
 }
+
+p {
+  margin: 20px 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ol {
+  margin: 20px 0;
+}
+
+li {
+  margin: 10px 15px;
+}
+
+#lista {
+  background-color: red;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+#lista li {
+  border: 3px solid black;
+}
