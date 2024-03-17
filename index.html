@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./estilos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -20,10 +24,88 @@
         <li>
           Hacemos nuestro "template" dentro del html (este va a tener la
           estructura que queremos modificar con JS).
+
+          <pre>
+            <code class="language-html hljs">
+            &lt;template id="template-li"&gt;
+                &lt;li class="list"&gt;
+                    &lt;b&gt;Nombre: &lt;/b&gt; &lt;span class="nombre"&gt;&lt;/span&gt;
+                    &lt;br /&gt;
+                    &lt;b&gt;Id: &lt;/b&gt;&lt;span id="id"&gt;&lt;/span&gt;
+                    &lt;br /&gt;
+                    &lt;b&gt;Precio: $&lt;/b&gt;&lt;span id="precio"&gt;&lt;/span&gt;
+                    &lt;br /&gt;
+                    &lt;b&gt;Imagen: &lt;/b&gt;&lt;span id="imagen"&gt;&lt;/span&gt;
+                    &lt;br /&gt;
+                    &lt;br /&gt;
+                &lt;/li&gt;
+            &lt;/template&gt;
+            </code>
+        </pre>
         </li>
         <li>
-          Accedemos con querySelector o con getDocumentByID a su contenido como
-          si fuera CSS.
+          Creamos una lista, puede ser un array, un array de objetos o traernos
+          nuestra consulta de una API directamente, en nuestro caso lo haremos
+          con un array de objetos.
+
+          <pre>
+            <code class="language-html">
+                const arrayLista = [
+                    { nombre: "Producto 1", id: 1, precio: 250000, imagen: "Aquí va la imagen" },
+                    { nombre: "Producto 2", id: 2, precio: 550000, imagen: "Aquí va la imagen" },
+                    { nombre: "Producto 3", id: 3, precio: 780000, imagen: "Aquí va la imagen" },
+                    { nombre: "Producto 4", id: 4, precio: 250000, imagen: "Aquí va la imagen" },
+                    { nombre: "Producto 5", id: 5, precio: 550000, imagen: "Aquí va la imagen" },
+                    { nombre: "Producto 6", id: 6, precio: 780000, imagen: "Aquí va la imagen" },
+                    { nombre: "Producto 7", id: 7, precio: 250000, imagen: "Aquí va la imagen" },
+                    { nombre: "Producto 8", id: 8, precio: 550000, imagen: "Aquí va la imagen" },
+                    { nombre: "Producto 9", id: 9, precio: 780000, imagen: "Aquí va la imagen" },
+                    { nombre: "Producto 10", id: 10, precio: 780000, imagen: "Aquí va la imagen" },
+                    { nombre: "Producto 11", id: 11, precio: 250000, imagen: "Aquí va la imagen" },
+                    { nombre: "Producto 12", id: 12, precio: 550000, imagen: "Aquí va la imagen" },
+                ];
+            </code>
+          </pre>
+        </li>
+        <li>
+          Elegimos el lugar donde vamos a insertar nuestro template.
+          <pre>
+            <code class="language-html">
+                &lt;ul id="lista"&gt;&lt;/ul&gt;
+            </code>
+          </pre>
+        </li>
+        <li>
+          Capturamos el id de la parte del código donde vamos a insertar nuestro
+          templateen nuestro caso ("#lista").
+          <pre>
+              <code class="language-html">
+                const lista = document.querySelector("#lista");
+              </code>
+          </pre>
+        </li>
+        <li>
+          Accedemos al template con querySelector o con getDocumentByID a su
+          contenido como si fuera CSS.
+
+          <pre>
+            <code class="language-html">
+                const template = document.querySelector("#template-li").content;
+            </code>
+          </pre>
+        </li>
+        <li>
+          Creamos un Fragment; el Fragment se utiliza como una versión ligera de
+          Document que almacena un segmento de una estructura de documento
+          compuesta de nodos como un documento estándar. Por ende en un fragment
+          vamos a guardar todo un template o nodos HTML que luego pintaremos en
+          nuestro DOM, así evitamos en mayor parte el Reflow.
+
+          <pre>
+            <code class="language-html">
+                const fragment = document.createDocumentFragment();
+            </code>
+          </pre>
         </li>
         <li>Lo modificamos con textContent.</li>
         <li>Lo clonamos.</li>
@@ -51,5 +133,10 @@
       </template>
     </div>
     <script src="./app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
   </body>
 </html>

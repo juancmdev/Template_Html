@@ -1,18 +1,39 @@
+document.addEventListener("DOMContentLoaded", (event) => {
+  document.querySelectorAll("pre code").forEach((block) => {
+    hljs.highlightElement(block);
+  });
+});
+
 const lista = document.querySelector("#lista");
 
 const arrayLista = [
   { nombre: "Producto 1", id: 1, precio: 250000, imagen: "Aquí va la imagen" },
   { nombre: "Producto 2", id: 2, precio: 550000, imagen: "Aquí va la imagen" },
   { nombre: "Producto 3", id: 3, precio: 780000, imagen: "Aquí va la imagen" },
-  { nombre: "Producto 1", id: 4, precio: 250000, imagen: "Aquí va la imagen" },
-  { nombre: "Producto 2", id: 5, precio: 550000, imagen: "Aquí va la imagen" },
-  { nombre: "Producto 3", id: 6, precio: 780000, imagen: "Aquí va la imagen" },
-  { nombre: "Producto 1", id: 7, precio: 250000, imagen: "Aquí va la imagen" },
-  { nombre: "Producto 2", id: 8, precio: 550000, imagen: "Aquí va la imagen" },
-  { nombre: "Producto 3", id: 9, precio: 780000, imagen: "Aquí va la imagen" },
-  { nombre: "Producto 3", id: 6, precio: 780000, imagen: "Aquí va la imagen" },
-  { nombre: "Producto 1", id: 7, precio: 250000, imagen: "Aquí va la imagen" },
-  { nombre: "Producto 2", id: 8, precio: 550000, imagen: "Aquí va la imagen" },
+  { nombre: "Producto 4", id: 4, precio: 250000, imagen: "Aquí va la imagen" },
+  { nombre: "Producto 5", id: 5, precio: 550000, imagen: "Aquí va la imagen" },
+  { nombre: "Producto 6", id: 6, precio: 780000, imagen: "Aquí va la imagen" },
+  { nombre: "Producto 7", id: 7, precio: 250000, imagen: "Aquí va la imagen" },
+  { nombre: "Producto 8", id: 8, precio: 550000, imagen: "Aquí va la imagen" },
+  { nombre: "Producto 9", id: 9, precio: 780000, imagen: "Aquí va la imagen" },
+  {
+    nombre: "Producto 10",
+    id: 10,
+    precio: 780000,
+    imagen: "Aquí va la imagen",
+  },
+  {
+    nombre: "Producto 11",
+    id: 11,
+    precio: 250000,
+    imagen: "Aquí va la imagen",
+  },
+  {
+    nombre: "Producto 12",
+    id: 12,
+    precio: 550000,
+    imagen: "Aquí va la imagen",
+  },
 ];
 
 const template = document.querySelector("#template-li").content;
