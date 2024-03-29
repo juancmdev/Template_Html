@@ -107,10 +107,45 @@
             </code>
           </pre>
         </li>
-        <li>Lo modificamos con textContent.</li>
-        <li>Lo clonamos.</li>
-        <li>Lo agregamos al fragment.</li>
-        <li>Por último lo agregamos a la lista.</li>
+        <li>
+          Modificamos cada elemento con textContent , para ello utilizamos un
+          forEach.
+          <pre>
+            <code class="language-html">
+                arrayLista.forEach((item) => {
+                  template.querySelector(".list .nombre").textContent = item.nombre;
+                  template.querySelector(".list #id").textContent = item.id;
+                  template.querySelector(".list #precio").textContent = item.precio;
+                  template.querySelector(".list #imagen").textContent = item.imagen;
+            </code>
+          </pre>
+        </li>
+
+        <li>
+          Lo clonamos.
+          <pre>
+            <code class="language-html">
+                  const clone = template.cloneNode(true);
+            </code>
+          </pre>
+        </li>
+        <li>
+          Lo agregamos al fragment.
+          <pre>
+            <code class="language-html">
+                  fragment.appendChild(clone);
+            });
+            </code>
+          </pre>
+        </li>
+        <li>
+          Por último lo agregamos a la lista.
+          <pre>
+            <code class="language-html">
+                  lista.appendChild(fragment);
+            </code>
+          </pre>
+        </li>
       </ol>
 
       <p>El resultado es el siguiente:</p>
